@@ -1,46 +1,5 @@
-//import java.io.*;
-//import java.util.ArrayList;
-//import java.util.Random;
-//import java.util.Scanner;
-//
-//public class Lottery {
-//    public static void main(String[] args) {
-//
-//        try {
-//
-//            File file = new File("/Users/jeongabae/IdeaProjects/homework/src/main/java/text1.txt");
-//
-//            FileReader filereader = new FileReader(file);
-//
-//            BufferedReader bufReader = new BufferedReader(filereader);
-//            String line = "";
-//            ArrayList<String> lotteryNum = new ArrayList<>();
-//            ArrayList<String> num = new ArrayList<>();
-//
-//            while ((line = bufReader.readLine()) != null) {
-//                lotteryNum.add(line);
-//                if (line.indexOf(",") == -1)
-//                    num.add(line);
-//                //System.out.println(line);
-//            }
-//
-//            System.out.println(num);
-//            //    if (line.indexOf())
-//
-//            bufReader.close();
-//        } catch (FileNotFoundException e) {
-//        } catch (IOException e) {
-//            System.out.println(e);
-//        }
-//    }
-//
-//
-//
-//
-//
-//}
-
 import java.io.*;
+import java.util.Arrays;
 
 public class Lottery {
     public static void main(String[] args) {
@@ -63,14 +22,63 @@ public class Lottery {
             e.printStackTrace();
         }
         String[] fileNum = a.split(",");
-//        int[] userNUm = new int[fileNum.length];
-//        for (int i=0;i<fileNum.length;i++){
-//            userNum[i] =Integer.parseInt(fileNum[i]);
-//        }
-        for (int i = 0; i < fileNum.length; i++) {
-            System.out.println(fileNum[i]);
-        }
 
+//        for (int i=0;i<fileNum.length;i++){
+//            System.out.println(fileNum[i]);
+//        }
+        int[] nums = Arrays.stream(fileNum).mapToInt(Integer::parseInt).toArray();
+//        for (int i=0;i<nums.length;i++){
+//            System.out.println(nums[i]);
+//        }
+
+        int[] lotteryNum = new int[7];
+        for (int i = 0; i < lotteryNum.length; i++) {
+            lotteryNum[i] = (int) (Math.random() * 45) + 1;
+            for (int j = 0; j < i; j++) {
+                if (lotteryNum[j] == lotteryNum[i]) {
+                    lotteryNum[i] = (int) (Math.random() * 45) + 1;
+                    i--;
+                    break;
+                }
+            }
+            System.out.println(lotteryNum[i]);
+        }
+        Correct c1 = new Correct();
+        Correct c2 = new Correct();
+        Correct c3 = new Correct();
+        Correct c4 = new Correct();
+        Correct c5 = new Correct();
+
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                if (nums[j] == lotteryNum[i]) {
+                    c1.correctUp();
+                }
+            }
+            for (int j = 7; j < 13; j++) {
+                if (nums[j] == lotteryNum[i]) {
+                    c2.correctUp();
+                }
+            }
+            for (int j = 14; j < 20; j++) {
+                if (nums[j] == lotteryNum[i]) {
+                    c3.correctUp();
+                }
+            }
+            for (int j = 21; j < 28; j++) {
+                if (nums[j] == lotteryNum[i]) {
+                    c4.correctUp();
+                }
+            }
+            for (int j = 29; j < 34; j++) {
+                if (nums[j] == lotteryNum[i]) {
+                    c5.correctUp();
+                }
+            }
+        }
 
     }
 }
+
+
+
