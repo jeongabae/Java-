@@ -31,10 +31,10 @@ public class Lottery {
 //        }
         int[] lotteryNum = new int[7];
         for (int i = 0; i < lotteryNum.length; i++) {
-            lotteryNum[i] = (int) (Math.random() * 7) + 1;
+            lotteryNum[i] = (int) (Math.random() * 45) + 1;
             for (int j = 0; j < i; j++) {
                 if (lotteryNum[j] == lotteryNum[i]) {
-                    lotteryNum[i] = (int) (Math.random() * 7) + 1;
+                    lotteryNum[i] = (int) (Math.random() * 45) + 1;
                     i--;
                     break;
                 }
@@ -110,9 +110,9 @@ public class Lottery {
         c5.rankNum();
 
 
-        System.out.println("c1: " + c1.win + " c2: " + c2.win + " c3: " + c3.win + " c4: " + c4.win + " c5: " + c5.win);
-        System.out.println("c1: " + c1.correct + " c2: " + c2.correct + " c3: " + c3.correct + " c4: " + c4.correct + " c5: " + c5.correct);
-        System.out.println("c1: " + c1.rank + " c2: " + c2.rank + " c3: " + c3.rank + " c4: " + c4.rank + " c5: " + c5.rank);
+//        System.out.println("c1: " + c1.win + " c2: " + c2.win + " c3: " + c3.win + " c4: " + c4.win + " c5: " + c5.win);
+//        System.out.println("c1: " + c1.correct + " c2: " + c2.correct + " c3: " + c3.correct + " c4: " + c4.correct + " c5: " + c5.correct);
+//        System.out.println("c1: " + c1.rank + " c2: " + c2.rank + " c3: " + c3.rank + " c4: " + c4.rank + " c5: " + c5.rank);
         int arr[] = {c1.rank, c2.rank, c2.rank, c4.rank, c5.rank};
         int maxRank = 6;
         for (int i = 0; i < arr.length; i++) {
