@@ -121,8 +121,8 @@ public class Lottery {
             }
         }
         Arrays.sort(arr);
-        for (int i = 0; i < arr.length; i++)
-            System.out.println(arr[i]);
+//        for (int i = 0; i < arr.length; i++)
+//            System.out.println(arr[i]);
 //        String rankSort = Arrays.toString(arr);
 //        System.out.println("등수배열 "+rankSort);
         Prize prize = new Prize();
