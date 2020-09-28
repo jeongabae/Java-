@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +9,9 @@ public class Lottery {
         String a = "";
 
         try {
-            FileReader fr = new FileReader("/Users/jeongabae/IdeaProjects/homework/src/main/java/text1.txt");
+            Scanner sc = new Scanner(System.in);
+            String input = sc.nextLine();
+            FileReader fr = new FileReader(input);
             BufferedReader br = new BufferedReader(fr);
 
             String line = "";
