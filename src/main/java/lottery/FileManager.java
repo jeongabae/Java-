@@ -9,7 +9,7 @@ import java.util.List;
 public class FileManager {
     List<LineNumber> user = new ArrayList<>();
 
-    File memberDB = new File("/Users/jeongabae/IdeaProjects/homework/src/main/java/lottery/text1.txt");
+    File memberDB = new File("/Users/jeongabae/IdeaProjects/project/src/main/java/blackjack/memberDB.txt");
 
     public List<LineNumber> fileRead() {
         try {
