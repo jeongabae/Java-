@@ -18,7 +18,9 @@ public class RandomNum {
                 }
             }
         }
+        System.out.print("당첨 번호 : ");
         for (int i = 0; i < lotteryNum.length; i++)
-            System.out.println("lotterynum[" + i + "]" + lotteryNum[i]);
+//            System.out.println("lotterynum[" + i + "]" + lotteryNum[i]);
+            System.out.print(lotteryNum[i] + " ");
     }
 }
