@@ -11,7 +11,6 @@ public class Print {
     }
 
     public void Print(List<Integer> rank) {
-        boolean win = false;
         Collections.sort(rank);
 
         HashMap<Integer, String> rankGroup = new HashMap<>();
