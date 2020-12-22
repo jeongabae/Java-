@@ -41,7 +41,7 @@ public class CorrectNum {
             correctNum = 0;
             bonusCorrect = false;
         }
-        new Print(prize.rank);
+        prize.Print();
         System.out.println();
     }
 }
